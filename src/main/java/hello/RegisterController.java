@@ -28,11 +28,9 @@ public class RegisterController {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @RequestMapping(value="/register", method=RequestMethod.GET)
+    @GetMapping(path="/register")
     public String greetingForm(Model model) {
-        System.out.println("(.)(.)");
         model.addAttribute("user", new User());
-        System.out.println("8=========>");
         return "user";
     }
 
