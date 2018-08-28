@@ -24,7 +24,7 @@ public class SpringConfig {
     @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl("jdbc:mysql://localhost:3306/User_db");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/User_db?serverTimezone=UTC");
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUsername("oru");
         dataSource.setPassword("oru");
