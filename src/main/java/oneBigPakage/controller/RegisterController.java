@@ -30,19 +30,18 @@ public class RegisterController {
     @Autowired
     UserDao userDao;
 
-    @GetMapping(path="/register")
+    @GetMapping(value="/register")
     public String greetingForm(Model model) {
-        System.out.println("(.)(.)");
         model.addAttribute("user", new User());
-        System.out.println("8=======>");
         return "user";
     }
 
     @PostMapping(path="/register")
     public String greetingSubmit(@ModelAttribute User user, Model model) {
         model.addAttribute("user", user);
+        System.out.println("nester");
         userDao.addNewUser(user);
+        System.out.println("nesterenko");
         return "result";
     }
-
 }
